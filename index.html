@@ -5,36 +5,149 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shadow Milk Cookie | Multiverse Archive</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #0a0a0a; color: #e5e7eb; font-family: 'Inter', sans-serif; }
-        .gradient-text { background: linear-gradient(90deg, #4f46e5, #9333ea); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        body { 
+            background-color: #050505; 
+            color: #e5e7eb; 
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-text { 
+            background: linear-gradient(90deg, #6366f1, #a855f7); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
+        .card { 
+            background: rgba(255, 255, 255, 0.02); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.05); 
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.04);
+        }
+        #glow {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(0,0,0,0) 70%);
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: 0.1s linear;
+        }
     </style>
 </head>
 <body class="overflow-x-hidden">
 
-    <section class="min-h-screen flex flex-col items-center justify-center text-center px-4">
-        <div class="absolute w-96 h-96 bg-indigo-600/20 rounded-full blur-[120px] -z-10"></div>
+    <div id="glow"></div>
+
+    <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center backdrop-blur-md border-b border-white/5">
+        <div class="font-black text-xl tracking-tighter uppercase">Shadow <span class="text-indigo-500">Milk</span></div>
+        <div class="hidden md:flex gap-8 text-sm font-bold uppercase tracking-widest text-gray-400">
+            <a href="#features" class="hover:text-white transition">Features</a>
+            <a href="#commands" class="hover:text-white transition">Commands</a>
+            <a href="#about" class="hover:text-white transition">About</a>
+        </div>
+    </nav>
+
+    <section class="min-h-screen flex flex-col items-center justify-center text-center px-4 relative">
+        <div class="absolute w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px] -z-10"></div>
         
-        <h1 class="text-6xl md:text-8xl font-black mb-6">
-            Shadow Milk <span class="gradient-text">Cookie</span>
+        <h1 class="text-6xl md:text-8xl font-black mb-6 tracking-tight">
+            The Eternal <br><span class="gradient-text">Archive</span>
         </h1>
-        <p class="text-xl text-gray-400 max-w-2xl mb-10">
-            The ultimate guardian of the Archive. Control the multiverse, manage your theater, and let the puppets dance with the most advanced bot in the shadow realm.
+        <p class="text-lg md:text-xl text-gray-400 max-w-2xl mb-10 leading-relaxed">
+            Protect and enhance your server with the presence of the Shadow Milk Cookie. 
+            A sophisticated suite of scripts designed for high-performance moderation and interaction.
         </p>
 
-        <div class="flex gap-4">
+        <div class="flex flex-col md:flex-row gap-4">
             <a href="https://discord.com/api/oauth2/authorize?client_id=1461867308065488967&permissions=8&scope=bot%20applications.commands" 
-               class="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 rounded-full font-bold transition-all transform hover:scale-105">
-               Invite the Director
+               class="px-10 py-4 bg-indigo-600 hover:bg-indigo-500 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg shadow-indigo-600/20">
+               Invite to Server
             </a>
-            <a href="#features" class="px-8 py-4 card rounded-full font-bold hover:bg-white/5 transition-all">
-               View Scripts
+            <a href="#commands" class="px-10 py-4 card rounded-full font-bold transition-all">
+               View Commands
             </a>
         </div>
     </section>
 
     <section id="features" class="py-24 px-8 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="card p-10 rounded-3xl">
+                <div class="text-indigo-500 text-4xl mb-6">🛡️</div>
+                <h3 class="text-2xl font-bold mb-4">Shadow Guard</h3>
+                <p class="text-gray-400 leading-relaxed text-sm">Automated protection that keeps your theater clean from foul language and malicious links with zero lag.</p>
+            </div>
+            <div class="card p-10 rounded-3xl">
+                <div class="text-indigo-500 text-4xl mb-6">🎭</div>
+                <h3 class="text-2xl font-bold mb-4">Act Management</h3>
+                <p class="text-gray-400 leading-relaxed text-sm">Advanced server management tools that allow moderators to orchestrate every detail of the community.</p>
+            </div>
+            <div class="card p-10 rounded-3xl">
+                <div class="text-indigo-500 text-4xl mb-6">✨</div>
+                <h3 class="text-2xl font-bold mb-4">Multilingual</h3>
+                <p class="text-gray-400 leading-relaxed text-sm">Detects and adapts to the server's language, ensuring a personalized experience for every puppet.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="commands" class="py-24 px-8 max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-16 text-center tracking-tight">Public <span class="text-indigo-500">Scripts</span></h2>
+        <div class="space-y-4">
+            <details class="card p-6 rounded-2xl cursor-pointer group">
+                <summary class="font-bold text-lg list-none flex justify-between items-center uppercase tracking-wider">
+                    /help
+                    <span class="text-indigo-500 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <div class="text-gray-400 mt-4 leading-relaxed border-t border-white/5 pt-4">
+                    The Archive's guidebook. Shows a complete list of all public scripts available for this server.
+                </div>
+            </details>
+
+            <details class="card p-6 rounded-2xl cursor-pointer group">
+                <summary class="font-bold text-lg list-none flex justify-between items-center uppercase tracking-wider">
+                    /ticket
+                    <span class="text-indigo-500 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <div class="text-gray-400 mt-4 leading-relaxed border-t border-white/5 pt-4">
+                    Opens a direct line to the server administration. Private and organized stages for support.
+                </div>
+            </details>
+
+            <details class="card p-6 rounded-2xl cursor-pointer group">
+                <summary class="font-bold text-lg list-none flex justify-between items-center uppercase tracking-wider">
+                    /automod status
+                    <span class="text-indigo-500 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <div class="text-gray-400 mt-4 leading-relaxed border-t border-white/5 pt-4">
+                    Displays the current state of the Shadow Guard and which filters are currently active.
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <footer class="py-20 text-center border-t border-white/5">
+        <p class="text-gray-600 text-sm tracking-widest uppercase">
+            A Shadow Milk Project <br>
+            <span class="text-indigo-500/30">Secure & Encrypted Archive</span>
+        </p>
+    </footer>
+
+    <script>
+        const glow = document.getElementById('glow');
+        window.addEventListener('mousemove', (e) => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+    </script>
+
+</body>
+</html>    <section id="features" class="py-24 px-8 max-w-6xl mx-auto">
         <h2 class="text-4xl font-bold text-center mb-16">Core Modules</h2>
         <div class="grid md:grid-cols-3 gap-8">
             <div class="card p-8 rounded-3xl">
