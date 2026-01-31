@@ -9,28 +9,15 @@
     <style>
         body { background-color: #050505; color: #e5e7eb; font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
         
-        /* Background Cinematic Treatment */
         .hero-bg {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            /* Certifica-te que a imagem está na mesma pasta com este nome */
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: linear-gradient(rgba(5, 5, 5, 0.6), rgba(5, 5, 5, 0.9)), url('https://cdn.discordapp.com/attachments/1372130398150201405/1466952035785248921/7Special.jpg?ex=697e9d0b&is=697d4b8b&hm=477bd9b0f852be538528484d256308f3942ccb78ee344f4f159cc38f0db73692&');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            z-index: -1;
+            background-size: cover; background-position: center; background-attachment: fixed; z-index: -1;
         }
 
         .gradient-text { background: linear-gradient(90deg, #6366f1, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
-        /* Glassmorphism for Cards */
-        .card { 
-            background: rgba(0, 0, 0, 0.5); 
-            backdrop-filter: blur(12px); 
-            border: 1px solid rgba(255, 255, 255, 0.08); 
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-        }
-        .card:hover { border-color: rgba(99, 102, 241, 0.6); transform: scale(1.02); background: rgba(0, 0, 0, 0.7); }
+        .card { background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.4s ease; }
+        .card:hover { border-color: rgba(99, 102, 241, 0.6); transform: translateY(-5px); }
         
         #glow { 
             width: 500px; height: 500px; 
@@ -39,10 +26,6 @@
             transform: translate(-50%, -50%); display: none; 
         }
         @media (min-width: 768px) { #glow { display: block; } }
-
-        /* Smooth reveal animation */
-        .reveal { animation: fadeIn 1.5s ease-out forwards; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body class="overflow-x-hidden">
@@ -60,71 +43,59 @@
         </div>
     </nav>
 
-    <section class="min-h-screen flex flex-col items-center justify-center text-center px-6 relative reveal">
-        <h1 class="text-6xl md:text-9xl font-black mb-4 tracking-tighter drop-shadow-2xl">THE <span class="gradient-text">ARCHIVE</span></h1>
-        <p class="text-sm md:text-xl text-gray-200 max-w-2xl mb-10 leading-relaxed font-semibold drop-shadow-lg">
+    <section class="min-h-screen flex flex-col items-center justify-center text-center px-6 relative">
+        <h1 class="text-6xl md:text-9xl font-black mb-4 tracking-tighter drop-shadow-2xl uppercase">THE <span class="gradient-text">ARCHIVE</span></h1>
+        <p class="text-sm md:text-xl text-gray-200 max-w-2xl mb-10 leading-relaxed font-semibold">
             "The theater of the multiverse is but a play, and I hold all the strings."
         </p>
         <a href="#modules" class="animate-bounce text-indigo-400 text-3xl">↓</a>
     </section>
 
     <section id="modules" class="py-20 px-6 max-w-6xl mx-auto pb-40">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="card p-8 rounded-3xl">
                 <div class="flex items-center gap-4 mb-4">
                     <span class="text-3xl text-indigo-500">📁</span>
-                    <h3 class="text-lg font-black uppercase tracking-widest text-white">Economy</h3>
+                    <h3 class="text-lg font-black uppercase text-white">Economy</h3>
                 </div>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    Advanced financial systems. Manage wealth, transactions, and theater audits with ease.
-                </p>
+                <p class="text-gray-400 text-sm">Advanced financial systems for currency management and theater audits.</p>
             </div>
-
             <div class="card p-8 rounded-3xl">
                 <div class="flex items-center gap-4 mb-4">
                     <span class="text-3xl text-indigo-500">📁</span>
-                    <h3 class="text-lg font-black uppercase tracking-widest text-white">Moderation</h3>
+                    <h3 class="text-lg font-black uppercase text-white">Moderation</h3>
                 </div>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    Unyielding control. Maintain order and discipline across your server's stages.
-                </p>
+                <p class="text-gray-400 text-sm">Unyielding control to maintain order across every stage.</p>
             </div>
-
             <div class="card p-8 rounded-3xl">
                 <div class="flex items-center gap-4 mb-4">
                     <span class="text-3xl text-indigo-500">📁</span>
-                    <h3 class="text-lg font-black uppercase tracking-widest text-white">Reputation</h3>
+                    <h3 class="text-lg font-black uppercase text-white">Reputation</h3>
                 </div>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    Track social standing. Influence and prestige management for every puppet.
-                </p>
+                <p class="text-gray-400 text-sm">Social influence systems to track every puppet's standing.</p>
             </div>
-
             <div class="card p-8 rounded-3xl">
                 <div class="flex items-center gap-4 mb-4">
                     <span class="text-3xl text-indigo-500">📁</span>
-                    <h3 class="text-lg font-black uppercase tracking-widest text-white">Roleplay</h3>
+                    <h3 class="text-lg font-black uppercase text-white">Roleplay</h3>
                 </div>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    Immersive storytelling. Scripts designed for character interaction and social acts.
-                </p>
+                <p class="text-gray-400 text-sm">Scripts built for immersion and character-driven acts.</p>
             </div>
-
             <div class="card p-8 rounded-3xl">
                 <div class="flex items-center gap-4 mb-4">
                     <span class="text-3xl text-indigo-500">📁</span>
-                    <h3 class="text-lg font-black uppercase tracking-widest text-white">Utility</h3>
+                    <h3 class="text-lg font-black uppercase text-white">Utility</h3>
                 </div>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    Core toolset. Diagnostics, information retrieval, and system management.
-                </p>
+                <p class="text-gray-400 text-sm">The core toolset for diagnostics and system management.</p>
             </div>
-
         </div>
     </section>
 
-    <footer class="py-16 text-center bg-black/80 backdrop-blur-xl border-t border-white/5">
+    <footer class="py-16 text-center bg-black/80 backdrop-blur-xl border-t border-white/5 px-6">
+        <div class="flex justify-center gap-8 mb-6 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">
+            <a href="tos.html" class="hover:text-indigo-400 transition">Terms of Service</a>
+            <a href="pp.html" class="hover:text-indigo-400 transition">Privacy Policy</a>
+        </div>
         <p class="text-[10px] tracking-[0.5em] uppercase text-indigo-500/60 font-bold mb-2">
             Shadow Milk Cookie | Multiverse Archive
         </p>
@@ -133,12 +104,12 @@
 
     <script>
         const glow = document.getElementById('glow');
-        if (window.innerWidth > 768) {
-            window.addEventListener('mousemove', (e) => {
+        window.addEventListener('mousemove', (e) => {
+            if (window.innerWidth > 768) {
                 glow.style.left = e.clientX + 'px';
                 glow.style.top = e.clientY + 'px';
-            });
-        }
+            }
+        });
     </script>
 </body>
 </html>
