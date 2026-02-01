@@ -2,48 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Shadow Milk Archive | Official Stage</title>
     <style>
-        :root { --primary: #a855f7; --accent: #6366f1; --glass: rgba(10, 10, 20, 0.9); --text: #f8fafc; }
+        :root { --primary: #a855f7; --accent: #6366f1; --glass: rgba(10, 10, 20, 0.92); --text: #f8fafc; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* Fundo Estático Anti-Stretch */
+        html, body { height: 100%; overflow-x: hidden; }
         body {
-            background: url('https://cdn.discordapp.com/attachments/1372130398150201405/1466952035785248921/7Special.jpg?ex=6980974b&is=697f45cb&hm=578cd276d12fb4d29d82a993169d57d4a5be2c0d7c12a2843101ceb891458cf3&') no-repeat center center fixed;
-            background-size: cover; color: var(--text); font-family: 'Inter', system-ui, sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center;
+            color: var(--text);
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: -1; }
-        .container { max-width: 1100px; width: 100%; padding: 40px 20px; }
-        nav { display: flex; justify-content: center; gap: clamp(10px, 4vw, 40px); padding: 15px 30px; background: var(--glass); backdrop-filter: blur(20px); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 100px; margin-bottom: 60px; position: sticky; top: 20px; z-index: 100; }
-        nav a { color: var(--text); text-decoration: none; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.4s; opacity: 0.7; }
-        nav a:hover { opacity: 1; color: var(--primary); text-shadow: 0 0 10px var(--primary); }
-        header { text-align: center; margin-bottom: 80px; }
-        h1 { font-size: clamp(2.5rem, 8vw, 5.5rem); font-weight: 900; background: linear-gradient(to bottom, #fff, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .subtitle { font-size: 1.2rem; font-style: italic; margin-top: 10px; opacity: 0.8; }
-        .btn-invite { display: inline-block; margin-top: 30px; padding: 18px 50px; background: var(--primary); color: white; text-decoration: none; border-radius: 15px; font-weight: 800; font-size: 1.1rem; box-shadow: 0 0 30px rgba(168, 85, 247, 0.5); transition: 0.4s; border: 1px solid rgba(255,255,255,0.2); }
-        .btn-invite:hover { transform: scale(1.05); box-shadow: 0 0 50px var(--primary); }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .card { background: var(--glass); padding: 35px; border-radius: 25px; border: 1px solid rgba(168, 85, 247, 0.2); backdrop-filter: blur(15px); transition: 0.4s; }
-        .card h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.6rem; }
-        .card p { opacity: 0.9; line-height: 1.6; }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://cdn.discordapp.com/attachments/1372130398150201405/1466952035785248921/7Special.jpg?ex=6980974b&is=697f45cb&hm=578cd276d12fb4d29d82a993169d57d4a5be2c0d7c12a2843101ceb891458cf3&') no-repeat center center;
+            background-size: cover;
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+
+        .container { max-width: 1100px; width: 100%; padding: 20px; z-index: 1; }
+
+        nav { 
+            display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; 
+            padding: 15px; background: var(--glass); backdrop-filter: blur(25px); 
+            border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 50px; 
+            margin-bottom: 40px; position: sticky; top: 10px;
+        }
+
+        nav a { color: var(--text); text-decoration: none; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; opacity: 0.7; transition: 0.3s; }
+        nav a:hover { opacity: 1; color: var(--primary); }
+
+        header { text-align: center; margin-bottom: 50px; padding: 40px 10px; }
+        h1 { font-size: clamp(2.5rem, 10vw, 5.5rem); font-weight: 900; background: linear-gradient(to bottom, #fff, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .subtitle { font-size: 1.1rem; font-style: italic; margin-top: 10px; opacity: 0.8; }
+
+        .btn-invite { 
+            display: inline-block; margin-top: 30px; padding: 18px 45px; background: var(--primary); 
+            color: white; text-decoration: none; border-radius: 15px; font-weight: 800; 
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.4); width: 100%; max-width: 320px;
+        }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: var(--glass); padding: 35px; border-radius: 25px; border: 1px solid rgba(168, 85, 247, 0.2); backdrop-filter: blur(15px); }
+        .card h3 { color: var(--primary); margin-bottom: 15px; }
     </style>
 </head>
 <body>
     <div class="container">
         <nav>
             <a href="index.html">Stage</a>
-            <a href="tos.html">Scripts</a>
-            <a href="privacy.html">Vault</a>
+            <a href="tos.html">ToS</a>
+            <a href="pp.html">Privacy Policy</a>
             <a href="https://discord.gg/r9QKNEvhBK" target="_blank" style="color: var(--accent);">Realm</a>
         </nav>
         <header>
             <h1>SHADOW MILK</h1>
-            <p class="subtitle">"Where truth is hidden behind the threads of the Archive."</p>
-            <a href="https://discord.com/oauth2/authorize?client_id=1461867308065488967&permissions=8&scope=bot%20applications.commands" class="btn-invite">INVITE THE DIRECTOR</a>
+            <p class="subtitle">"The strings of the multiverse are mine to pull."</p>
+            <a href="https://discord.com/oauth2/authorize?client_id=YOUR_ID&permissions=8&scope=bot%20applications.commands" class="btn-invite">INVITE THE DIRECTOR</a>
         </header>
         <div class="grid">
-            <div class="card"><h3>🎭 Economy</h3><p>Manage Shadow Fragments, collect Stage Props, and claim Daily Rewards to rise in the dossier.</p></div>
-            <div class="card"><h3>📜 Utility</h3><p>Detailed actor dossiers and puppet inspections to keep the stage organized.</p></div>
-            <div class="card"><h3>🛡️ Administration</h3><p>Elite sovereignty tools for the Director to manipulate the Archive's modules.</p></div>
+            <div class="card"><h3>🎭 Economy</h3><p>Collect Fragments and manage your props.</p></div>
+            <div class="card"><h3>📜 Utility</h3><p>Extract puppet dossiers with precision.</p></div>
+            <div class="card"><h3>🛡️ Admin</h3><p>Elite sovereignty commands.</p></div>
         </div>
     </div>
 </body>
