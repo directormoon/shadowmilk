@@ -7,43 +7,29 @@
     <style>
         :root { --primary: #a855f7; --glass: rgba(10, 10, 20, 0.96); --text: #f8fafc; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { min-height: 100%; }
-        body { color: var(--text); font-family: 'Segoe UI', sans-serif; display: flex; flex-direction: column; align-items: center; }
-        body::before {
-            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: url('https://cdn.discordapp.com/attachments/1372130398150201405/1466952035785248921/7Special.jpg?ex=6980974b&is=697f45cb&hm=578cd276d12fb4d29d82a993169d57d4a5be2c0d7c12a2843101ceb891458cf3&') no-repeat center center;
-            background-size: cover; z-index: -2;
-        }
+        html, body { height: 100%; }
+        body { color: var(--text); font-family: 'Segoe UI', sans-serif; display: flex; flex-direction: column; min-height: 100vh; }
+        body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('https://cdn.discordapp.com/attachments/1372130398150201405/1466952035785248921/7Special.jpg?ex=6980974b&is=697f45cb&hm=578cd276d12fb4d29d82a993169d57d4a5be2c0d7c12a2843101ceb891458cf3&') no-repeat center center; background-size: cover; z-index: -2; }
         body::after { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); z-index: -1; }
-        
-        .container { max-width: 900px; width: 100%; padding: 60px 20px; flex: 1; }
-        .doc-box { 
-            background: var(--glass); padding: clamp(30px, 5vw, 60px); border-radius: 40px; 
-            border: 1px solid var(--primary); backdrop-filter: blur(30px); 
-            box-shadow: 0 20px 60px rgba(0,0,0,0.8), 0 0 20px rgba(168, 85, 247, 0.1); 
-        }
-        h1 { color: var(--primary); border-bottom: 2px solid rgba(168,85,247,0.3); padding-bottom: 15px; margin-bottom: 30px; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 3px; }
-        h3 { color: #6366f1; margin-top: 35px; font-size: 1.1rem; text-transform: uppercase; border-left: 4px solid var(--primary); padding-left: 15px; }
-        p, li { opacity: 0.9; line-height: 1.8; margin-bottom: 15px; font-size: 1.05rem; }
-        .back-btn { display: inline-block; color: var(--primary); text-decoration: none; font-weight: bold; margin-bottom: 30px; font-size: 0.9rem; text-transform: uppercase; transition: 0.3s; }
-        .back-btn:hover { letter-spacing: 1px; }
-        footer { width: 100%; padding: 40px; text-align: center; font-size: 0.8rem; opacity: 0.6; margin-top: 40px; }
+        .container { max-width: 800px; width: 100%; padding: 40px 20px; flex: 1; margin: 0 auto; }
+        .doc-box { background: var(--glass); padding: 35px; border-radius: 30px; border: 1px solid var(--primary); backdrop-filter: blur(25px); }
+        h1 { color: var(--primary); border-bottom: 2px solid rgba(168,85,247,0.3); padding-bottom: 10px; margin-bottom: 25px; font-size: 1.6rem; text-transform: uppercase; }
+        h3 { color: #6366f1; margin-top: 25px; font-size: 0.9rem; text-transform: uppercase; }
+        p { opacity: 0.9; line-height: 1.7; margin-bottom: 15px; font-size: 0.95rem; }
+        .back-btn { display: inline-block; color: var(--primary); text-decoration: none; font-weight: bold; margin-bottom: 20px; font-size: 0.8rem; }
+        footer { width: 100%; padding: 30px; text-align: center; font-size: 0.75rem; opacity: 0.6; background: rgba(10, 10, 20, 0.8); margin-top: auto; }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="index.html" class="back-btn">← Back to The Theater</a>
+        <a href="index.html" class="back-btn">← Theater</a>
         <div class="doc-box">
             <h1>THE PLAYBOOK</h1>
-            <p>The strings of this Archive are bound by the following decrees. By engaging with the stage, you accept the Director's script.</p>
-            
-            <h3>I. Puppet Behavior</h3>
-            <p>Any exploitation of the <b>Economy</b> (Fragments) or <b>Reputation</b> systems to gain an unfair advantage is a violation of the play. Sabotaging <b>Moderation</b> or <b>Utility</b> commands will result in immediate removal from the Archive.</p>
-            
-            <h3>II. Sovereign Authority</h3>
-            <p>The Director (ID: 971381693971824700) holds absolute power over all dossiers. Roles, fragments, and roleplay progress can be reset at the Director's whim to maintain the Archive's integrity.</p>
-            
-            <a href="https://discord.gg/r9QKNEvhBK" style="display:block; text-align:center; padding:18px; background:var(--primary); color:white; text-decoration:none; border-radius:15px; font-weight:bold; margin-top:40px; box-shadow: 0 10px 30px rgba(168,85,247,0.3);">THE DOMAIN</a>
+            <p>The rules of the stage are absolute. By interacting with the Director, you accept these strings:</p>
+            <h3>1. Performance</h3>
+            <p>No exploitation of Economy or Reputation modules. Sabotaging the Archive results in a ban.</p>
+            <h3>2. Sovereignty</h3>
+            <p>The Director (ID: 971381693971824700) reserves the right to wipe any dossier to maintain purity.</p>
         </div>
     </div>
     <footer>Shadow Milk Archive © 2026</footer>
