@@ -9,14 +9,26 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body { height: 100%; }
         body { color: var(--text); font-family: 'Segoe UI', sans-serif; display: flex; flex-direction: column; min-height: 100vh; }
-        body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('https://cdn.discordapp.com/attachments/1372130398150201405/1466952035785248921/7Special.jpg?ex=6980974b&is=697f45cb&hm=578cd276d12fb4d29d82a993169d57d4a5be2c0d7c12a2843101ceb891458cf3&') no-repeat center center; background-size: cover; z-index: -2; }
+        
+        /* FUNDO LOCAL: Garantindo que os registros sejam legíveis */
+        body::before { 
+            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: url('7(Special).jpg') no-repeat center center; 
+            background-size: cover; z-index: -2; 
+        }
+        
         body::after { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); z-index: -1; }
+        
         .container { max-width: 800px; width: 100%; padding: 40px 20px; flex: 1; margin: 0 auto; }
         .doc-box { background: var(--glass); padding: 35px; border-radius: 30px; border: 1px solid var(--accent); backdrop-filter: blur(25px); }
+        
         h1 { color: var(--accent); border-bottom: 2px solid rgba(99,102,241,0.3); padding-bottom: 10px; margin-bottom: 25px; font-size: 1.6rem; text-transform: uppercase; }
         h3 { color: #a855f7; margin-top: 25px; font-size: 0.9rem; text-transform: uppercase; }
         p { opacity: 0.9; line-height: 1.7; margin-bottom: 15px; font-size: 0.95rem; }
-        .back-btn { display: inline-block; color: var(--accent); text-decoration: none; font-weight: bold; margin-bottom: 20px; font-size: 0.8rem; }
+        
+        .back-btn { display: inline-block; color: var(--accent); text-decoration: none; font-weight: bold; margin-bottom: 20px; font-size: 0.8rem; transition: 0.3s; }
+        .back-btn:hover { color: #fff; text-shadow: 0 0 10px var(--accent); }
+        
         footer { width: 100%; padding: 30px; text-align: center; font-size: 0.75rem; opacity: 0.6; background: rgba(10, 10, 20, 0.8); margin-top: auto; }
     </style>
 </head>
@@ -26,10 +38,16 @@
         <div class="doc-box">
             <h1>THE RECORDS</h1>
             <p>Every movement of the puppets is recorded within the Archive's vault.</p>
+            
             <h3>Archived Data</h3>
-            <p>We store Discord IDs, Economy Fragments, and Reputation points for continuity. Dossier wipes can be requested in the Domain.</p>
+            <p>We store Discord IDs, Economy Fragments, and Reputation points for continuity. No puppet data is sold to external kingdoms; it belongs solely to the Archive.</p>
+            
+            <h3>Dossier Erasure</h3>
+            <p>Dossier wipes and data removal can be requested at any time within the <b>Domain</b>. Once deleted, your strings are forever cut from our history.</p>
         </div>
     </div>
-    <footer>Shadow Milk Archive © 2026 | Inspired by CRK and it's lore (obviously)</footer>
+    <footer>
+        Shadow Milk Archive © 2026 | Directed by Sovereign ID: 971381693971824700 | Inspired by CRK lore
+    </footer>
 </body>
 </html>
