@@ -34,7 +34,8 @@
             z-index: -1; 
         }
         
-        .container { max-width: 900px; width: 100%; padding: 40px 20px; flex: 1; margin: 0 auto; }
+        /* AJUSTE: Padding superior reduzido para alinhar com o index */
+        .container { max-width: 900px; width: 100%; padding: 10px 20px; flex: 1; margin: 0 auto; }
 
         nav { 
             display: flex; justify-content: center; gap: 12px; 
@@ -51,7 +52,6 @@
         }
         nav a:hover { opacity: 1; color: var(--primary); }
         
-        /* A DOC-BOX QUE FALTAVA (Igual ao Privacy) */
         .doc-box { 
             background: var(--glass); padding: 40px; border-radius: 30px; 
             border: 1px solid rgba(168, 85, 247, 0.2); backdrop-filter: blur(25px);
@@ -65,12 +65,11 @@
             margin-bottom: 20px; text-transform: uppercase; letter-spacing: -1px;
         }
 
-        /* A BARRA LATERAL ROXA QUE FALTAVA */
         .intro-text { 
             font-style: italic; 
             opacity: 0.7; 
             margin-bottom: 30px; 
-            border-left: 3px solid var(--primary); /* Aqui está a barra! */
+            border-left: 3px solid var(--primary); 
             padding-left: 15px; 
             line-height: 1.6;
         }
