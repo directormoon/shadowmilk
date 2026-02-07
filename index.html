@@ -3,50 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Shadow Milk Archive | Official Stage</title>
+    <title>The Records | Shadow Milk Archive</title>
     <style>
-        :root { --primary: #a855f7; --accent: #6366f1; --glass: rgba(10, 10, 20, 0.94); --text: #f8fafc; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        html, body { height: 100%; margin: 0; }
-        body { color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; display: flex; flex-direction: column; min-height: 100vh; }
-
-        /* FUNDO LOCAL CORRIGIDO */
-        body::before {
-            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: url('7(Special).jpg') no-repeat center center;
-            background-size: cover; z-index: -2;
+        :root { 
+            --primary: #a855f7; 
+            --accent: #6366f1; 
+            --glass: rgba(10, 10, 20, 0.94); 
+            --text: #f8fafc; 
         }
 
-        body::after { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.65); z-index: -1; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { height: 100%; margin: 0; }
+        body { 
+            color: var(--text); 
+            font-family: 'Segoe UI', system-ui, sans-serif; 
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh; 
+        }
+        
+        /* FUNDO PADRONIZADO */
+        body::before { 
+            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: url('7(Special).jpg') no-repeat center center; 
+            background-size: cover; z-index: -2; 
+        }
+        
+        body::after { 
+            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(0, 0, 0, 0.75); 
+            z-index: -1; 
+        }
+        
+        .container { max-width: 800px; width: 100%; padding: 40px 20px; flex: 1; margin: 0 auto; }
 
-        .container { max-width: 1200px; width: 100%; padding: 20px; flex: 1; margin: 0 auto; }
-
+        /* NAV PADRÃO DO TEU SITE */
         nav { 
             display: flex; justify-content: center; gap: 12px; 
             padding: 12px 15px; background: var(--glass); backdrop-filter: blur(25px); 
             border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 50px; 
             margin-bottom: 40px; position: sticky; top: 10px; z-index: 100;
+            width: fit-content; margin-left: auto; margin-right: auto;
         }
 
-        nav a { color: var(--text); text-decoration: none; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.8; transition: 0.3s; white-space: nowrap; }
+        nav a { 
+            color: var(--text); text-decoration: none; font-size: 0.65rem; 
+            font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; 
+            opacity: 0.8; transition: 0.3s; 
+        }
         nav a:hover { opacity: 1; color: var(--primary); }
+        
+        /* BOX DOS REGISTROS */
+        .doc-box { 
+            background: var(--glass); padding: 40px; border-radius: 30px; 
+            border: 1px solid rgba(168, 85, 247, 0.2); backdrop-filter: blur(25px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+        
+        h1 { 
+            font-size: 2.2rem; font-weight: 900; 
+            background: linear-gradient(to bottom, #fff, var(--primary)); 
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
+            margin-bottom: 20px; text-transform: uppercase; letter-spacing: -1px;
+        }
 
-        header { text-align: center; margin-bottom: 40px; padding: 20px 0; }
-        h1 { font-size: clamp(2.5rem, 10vw, 5.5rem); font-weight: 900; background: linear-gradient(to bottom, #fff, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .subtitle { font-size: 1rem; font-style: italic; margin-top: 10px; opacity: 0.9; }
-
-        .btn-invite { display: inline-block; margin-top: 30px; padding: 15px 40px; background: var(--primary); color: white; text-decoration: none; border-radius: 15px; font-weight: 800; font-size: 0.9rem; box-shadow: 0 0 30px rgba(168, 85, 247, 0.4); text-transform: uppercase; }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
-        .card { background: var(--glass); padding: 30px; border-radius: 25px; border: 1px solid rgba(168, 85, 247, 0.2); backdrop-filter: blur(20px); }
-        .card h3 { color: var(--primary); margin-bottom: 12px; font-size: 1.3rem; }
-        .card p { font-size: 0.9rem; line-height: 1.6; opacity: 0.9; }
+        .intro-text { font-style: italic; opacity: 0.7; margin-bottom: 30px; border-left: 3px solid var(--primary); padding-left: 15px; }
+        
+        h3 { color: var(--primary); margin-top: 30px; margin-bottom: 10px; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        p { opacity: 0.9; line-height: 1.8; margin-bottom: 15px; font-size: 0.95rem; }
+        
+        b { color: var(--primary); }
 
         footer { 
-            width: 100%; padding: 30px 20px; background: rgba(10, 10, 20, 0.8); 
-            border-top: 1px solid rgba(168, 85, 247, 0.2); text-align: center; 
-            font-size: 0.75rem; opacity: 0.6; margin-top: auto;
+            width: 100%; padding: 30px; text-align: center; font-size: 0.75rem; 
+            opacity: 0.5; background: rgba(5, 5, 10, 0.9); border-top: 1px solid rgba(168, 85, 247, 0.1);
+            margin-top: 40px;
         }
     </style>
 </head>
@@ -54,24 +85,29 @@
     <div class="container">
         <nav>
             <a href="index.html">Theater</a>
-            <a href="commands.html" style="color: var(--primary); opacity: 1;">Scripts</a> <a href="tos.html">Playbook</a>
-            <a href="pp.html">Records</a>
+            <a href="commands.html">Scripts</a>
+            <a href="tos.html">Playbook</a>
+            <a href="pp.html" style="color: var(--primary); opacity: 1;">Records</a>
             <a href="https://discord.gg/r9QKNEvhBK" target="_blank" style="color: var(--accent);">Domain</a>
         </nav>
-        <header>
-            <h1>SHADOW MILK</h1>
-            <p class="subtitle">"The strings of the multiverse are mine to pull."</p>
-            <a href="https://discord.com/oauth2/authorize?client_id=YOUR_ID&permissions=8&scope=bot%20applications.commands" class="btn-invite">START THE SHOW</a>
-        </header>
-        <div class="grid">
-            <div class="card"><h3>🍪 Cookie Run Kingdom</h3><p>Specialized modules inspired by the main game.</p></div>
-            <div class="card"><h3>🎭 Economy</h3><p>Collect Fragments and manage your theatrical fortune.</p></div>
-            <div class="card"><h3>🛡️ Moderation</h3><p>Keep the stage clean and the puppets in line.</p></div>
-            <div class="card"><h3>🌟 Reputation</h3><p>Track the fame and standing of every actor.</p></div>
-            <div class="card"><h3>🎬 Roleplay</h3><p>Immersive systems for actors on the multiverse stage.</p></div>
-            <div class="card"><h3>📜 Utility</h3><p>Precision tools for puppet dossier extraction.</p></div>
+
+        <div class="doc-box">
+            <h1>THE RECORDS</h1>
+            <p class="intro-text">"Every movement of the puppets is recorded within the Archive's vault. Nothing escapes the Director's gaze."</p>
+            
+            <h3>Archived Data</h3>
+            <p>We store <b>Discord IDs</b>, <b>Economy Fragments</b>, and <b>Reputation points</b> to ensure the continuity of the performance. This data is essential for the bot's systems to recognize your status within the multiverse.</p>
+            <p>No puppet data is sold to external kingdoms; it belongs solely to the Archive and is used only to maintain your theatrical standing.</p>
+            
+            <h3>Dossier Erasure</h3>
+            <p>Dossier wipes and total data removal can be requested at any time within the <b>Domain</b> (Discord Support). Once your request is processed, your strings are forever cut from our history and all associated records are purged from the vault.</p>
+            
+            <h3>Cookies & Storage</h3>
+            <p>The Archive uses local storage only to remember your session and preferences. We do not track your movements outside of our theater walls.</p>
         </div>
     </div>
-    <footer>Shadow Milk Archive © 2026 | Directed by Sovereign ID: 971381693971824700 | Inspired by CRK lore</footer>
+    <footer>
+        Shadow Milk Archive © 2026 | Sovereign ID: 971381693971824700
+    </footer>
 </body>
 </html>
